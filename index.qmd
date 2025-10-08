@@ -123,7 +123,6 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
 
 
 
-
 ::: {#projects .band .band--dark}
 <h2 class="text-center">Projects</h2>
 <p class="muted text-center">My independent projects & contributions</p>
