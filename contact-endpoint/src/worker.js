@@ -29,30 +29,34 @@ export default {
     let data;
     try {
       data = await request.json();
-    } catch (err) {
+    } catch {
       return new Response(JSON.stringify({ error: "Invalid JSON body" }), {
         status: 400,
         headers: { "Content-Type": "application/json", ...corsHeaders(origin, allowedOrigin) },
       });
     }
 
-    const name = (data.name || "").toString().trim();
-    const email = (data._replyto || data.email || "").toString().trim();
+    // Accept name OR first/last from the form
+    const first = (data.first_name || "").toString().trim();
+    const last  = (data.last_name  || "").toString().trim();
+    const name  = ((data.name || `${first} ${last}`).trim()) || "Anonymous";
+
+    const email   = (data._replyto || data.email || "").toString().trim();
     const company = (data.company || "").toString().trim();
     const message = (data.message || "").toString().trim();
 
-    if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "name, email, and message are required" }), {
+    // Require email + message; name now optional
+    if (!email || !message) {
+      return new Response(JSON.stringify({ error: "email and message are required" }), {
         status: 400,
         headers: { "Content-Type": "application/json", ...corsHeaders(origin, allowedOrigin) },
       });
     }
 
-    // Build the email payload for Resend
     const subject = `New message from ${name}${company ? " @ " + company : ""}`;
     const html = `
       <div style="font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif; line-height:1.5">
-        <h2>New Contact / CV Request</h2>
+        <h2>New Contact Form Message</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ""}
@@ -61,7 +65,6 @@ export default {
       </div>
     `;
 
-    // Send via Resend
     try {
       const r = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -90,7 +93,6 @@ export default {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders(origin, allowedOrigin) },
       });
-
     } catch (e) {
       return new Response(JSON.stringify({ error: "Network error", details: e.message }), {
         status: 500,
@@ -105,7 +107,8 @@ function corsHeaders(origin, allowed) {
   return {
     "Access-Control-Allow-Origin": isAllowed ? origin : "null",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    // allow Accept as well; some browsers include it in preflight
+    "Access-Control-Allow-Headers": "Content-Type, Accept",
     "Vary": "Origin",
   };
 }

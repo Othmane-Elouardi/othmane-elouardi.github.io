@@ -462,3 +462,45 @@ details[open] > summary::after {
   transform: translateY(-1px);
 }
 
+
+
+
+
+
+```{=html}
+<style>
+/* Screen-reader only label utility */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+/* 2-up grid for first/last name, collapses on small screens */
+.contact-form .grid {
+  display: grid;
+  gap: 0.75rem;
+}
+.contact-form .grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 640px) {
+  .contact-form .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Subtle focus ring for dark backgrounds */
+.contact-form input,
+.contact-form textarea {
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(106,169,255,.25);
+}
+</style>

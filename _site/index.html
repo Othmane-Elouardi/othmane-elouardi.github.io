@@ -167,7 +167,6 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div id="about" class="band band--glass">
-<section>
 <section id="about-me" class="level3">
 <h3 class="anchored" data-anchor-id="about-me">About Me</h3>
 <p>Results-driven <strong>Business Analyst</strong> with a strong foundation in <strong>Applied Business Analytics</strong>, <strong>data strategy</strong>, and <strong>process optimization</strong>.<br>
@@ -205,12 +204,11 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
 <strong>Technical Diploma, Business Management</strong> — Madison College<br>
 <strong>M.A., Communication in Contexts: Culture &amp; Dialogue</strong> — University Moulay Ismail<br>
 <strong>B.A., English Studies</strong> — University Sidi Mohamed Ben Abdellah</p>
-</section></section></div>
 <p>:::</p>
-
+</section>
 <div id="skills" class="band band--grid">
 <section id="core-skills-expandable" class="level3">
-<h3 class="anchored" data-anchor-id="core-skills-expandable">Core Skills (Expandable)</h3>
+<h3 class="anchored">Core Skills (Expandable)</h3>
 <details open="">
 <summary>
 <strong>Analytics &amp; Decision Support</strong>
@@ -302,11 +300,9 @@ Strong communication and presentation skills developed through leadership and tr
 </li>
 </ul>
 </details>
-</section>
-</div>
+<p>:::</p>
 <div id="projects" class="band band--dark">
-<section>
-<h2 class="text-center anchored">
+<h2 class="text-center anchored" data-anchor-id="core-skills-expandable">
 Projects
 </h2>
 <p class="muted text-center">
@@ -415,20 +411,26 @@ My independent projects &amp; contributions
     .project-img { width: 100%; }
   }
 </style>
-</section>
 </div>
 <div id="contact" class="band band--accent">
-<section id="contact-me" class="level3">
-<h3 class="anchored" data-anchor-id="contact-me">Contact Me</h3>
-<p>Use this form to reach me — it goes directly to my inbox.</p>
-<form id="contact-form" class="contact-form">
+<h3 class="anchored">
+Contact Me
+</h3>
+<p>
+Use this form to reach me — it goes directly to my inbox.
+</p>
+<form id="contact-form" class="contact-form" autocomplete="on" novalidate="">
 <div class="grid">
 <pre><code>&lt;input type="text" name="first_name" placeholder="First name" required&gt;
 &lt;input type="text" name="last_name" placeholder="Last name" required&gt;</code></pre>
 </div>
-<input type="email" name="_replyto" placeholder="Your email" required=""> <input type="text" name="company" placeholder="Company (optional)">
+<input type="email" name="_replyto" placeholder="Your email" required="" inputmode="email" autocomplete="email"> <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
 <textarea name="message" rows="4" placeholder="Write your message..." required=""></textarea>
-<input type="text" name="_gotcha" style="display:none"> <button type="submit" class="btn btn-primary">Send Message</button>
+<!-- Honeypot -->
+<p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;"></p>
+<button type="submit" class="btn btn-primary" id="contact-submit">
+Send Message
+</button>
 <p id="form-status" class="muted" style="margin-top:.5rem;">
 </p>
 </form>
@@ -440,7 +442,6 @@ My independent projects &amp; contributions
     TO_EMAIL       = "othmaneelouardi@gmail.com"
   worker.js accepts JSON POST.
 -->
-</section>
 </div>
 <style>
 .subdivider{
@@ -528,10 +529,11 @@ form.addEventListener('submit',async(e)=>{
 </script>
 
 
+</section>
+</div>
+</div>
 
-</main></div>
-
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -932,7 +934,7 @@ form.addEventListener('submit',async(e)=>{
     }
   });
   </script>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 
