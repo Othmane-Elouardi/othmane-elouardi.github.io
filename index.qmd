@@ -295,42 +295,81 @@ tick();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('reveal')}),{threshold:.12});
 document.querySelectorAll('.section,.card').forEach(n=>io.observe(n));
 
-// ---------- Scroll spy (includes #home hero) ----------
-const sections=[...document.querySelectorAll('.band[id], .hero[id], .section[id]')];
-const navLinks=[...document.querySelectorAll('.navbar a[href*="#"], .navbar .nav-link[href*="#"]')];
 
-function setActive(id){
-  navLinks.forEach(a=>{
-    const href=a.getAttribute('href')||'';
-    a.classList.toggle('active', href.endsWith('#'+id));
-  });
-  document.querySelectorAll('.band, .section').forEach(b=>b.classList.remove('current'));
-  const active=document.getElementById(id);
-  if(active && (active.classList.contains('band')||active.classList.contains('section'))) active.classList.add('current');
-}
+// ---------- Scroll spy (middle-of-screen guideline, stable) ----------
+(() => {
+  const HEADER_OFFSET = 80;       // your sticky header height
+  const CENTER_RATIO  = 0.50;     // 0.50 = exact middle; try 0.45 if you want a bit above center
 
-const spy=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      const id=entry.target.getAttribute('id');
-      setActive(id);
-      history.replaceState(null,"",'#'+id);
+  const sections = [...document.querySelectorAll('.band[id], .hero[id], .section[id]')];
+  const navLinks = [...document.querySelectorAll('.navbar a[href*="#"], .navbar .nav-link[href*="#"]')];
+
+  function setActive(id){
+    navLinks.forEach(a => {
+      const href = a.getAttribute('href') || '';
+      a.classList.toggle('active', href.endsWith('#' + id));
+    });
+    document.querySelectorAll('.band, .section').forEach(b => b.classList.remove('current'));
+    const el = document.getElementById(id);
+    if (el && (el.classList.contains('band') || el.classList.contains('section'))) {
+      el.classList.add('current');
     }
-  });
-},{threshold:0.55});
-sections.forEach(s=>spy.observe(s));
+  }
 
-navLinks.forEach(a=>{
-  a.addEventListener('click',()=>{
-    const id=(a.getAttribute('href')||'').split('#')[1];
-    if(id) setActive(id);
-  });
-});
+  // Cache absolute Y positions of section tops
+  let positions = [];
+  function computePositions(){
+    positions = sections
+      .map(s => ({ id: s.id, top: s.getBoundingClientRect().top + window.scrollY }))
+      .sort((a,b) => a.top - b.top);
+  }
 
-window.addEventListener('load',()=>{
-  const id=(location.hash || '#home').slice(1);
-  setActive(id);
-});
+  function updateActive(){
+    // Guideline is around the middle of the viewport, plus header offset
+    const guideY = window.scrollY + HEADER_OFFSET + window.innerHeight * CENTER_RATIO;
+
+    // Pick the last section whose top is <= guideY
+    let current = positions[0];
+    for (const p of positions){
+      if (p.top <= guideY) current = p; else break;
+    }
+
+    // If scrolled to the very bottom, force last section
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      current = positions[positions.length - 1];
+    }
+
+    if (current){
+      setActive(current.id);
+      if (!location.hash.endsWith('#' + current.id)) {
+        history.replaceState(null, '', '#' + current.id);
+      }
+    }
+  }
+
+  // Recompute on load/resize (in case content height changes)
+  function recomputeAndUpdate(){
+    computePositions();
+    updateActive();
+  }
+
+  window.addEventListener('load',  recomputeAndUpdate);
+  window.addEventListener('resize', recomputeAndUpdate);
+
+  // Smooth, throttled scroll handling
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(() => { updateActive(); ticking = false; });
+    }
+  }, { passive: true });
+
+  // Initial run
+  recomputeAndUpdate();
+})();
+
+
 
 // ---------- Force download on navbar "CV" ----------
 const navCv = document.querySelector('.navbar a[href$="cv.pdf"], .navbar .nav-link[href$="cv.pdf"]');
@@ -378,3 +417,5 @@ form.addEventListener('submit', async (e) => {
 
 
 </script>
+
+
