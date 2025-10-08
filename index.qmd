@@ -67,7 +67,9 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
 **M.A., Communication in Contexts: Culture & Dialogue** — University Moulay Ismail  
 **B.A., English Studies** — University Sidi Mohamed Ben Abdellah
 
-:::
+
+
+
 
 ::: {#skills .band .band--grid}
 ### Core Skills (Expandable)
@@ -116,7 +118,7 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
     <li>Strong communication and presentation skills developed through leadership and training roles</li>
   </ul>
 </details>
-  :::
+ 
 
 
 
@@ -418,5 +420,3 @@ form.addEventListener('submit', async (e) => {
 
 
 </script>
-
-
