@@ -417,3 +417,48 @@ details[open] > summary::after {
 
 /* ensure anchors don't hide under sticky navbar */
 .band[id] { scroll-margin-top: 80px; }
+
+
+
+
+/* Contact form general layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #111;
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #888;
+}
+
+.contact-form button {
+  margin-top: 0.75rem;
+  background: #00d1b2;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.contact-form button:hover {
+  background: #00bda3;
+  transform: translateY(-1px);
+}
+

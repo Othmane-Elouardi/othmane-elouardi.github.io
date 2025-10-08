@@ -24,19 +24,48 @@ format:
 
 ::: {#about .band .band--glass}
 <div class="section">
+
 ### About Me
 
-I’m a results-driven **Business Analyst** with graduate training in **Applied Business Analytics** and a record of improving performance through **data-driven insights** and **process optimization**.  
-I transform complex datasets into clear narratives and **decision support** that improve efficiency, reduce risk, and drive measurable impact.
+Results-driven **Business Analyst** with a strong foundation in **Applied Business Analytics**, **data strategy**, and **process optimization**.  
+My passion lies in transforming complex data into actionable insights that drive efficiency, growth, and measurable business outcomes.
 
-I combine technical proficiency in **Python**, **R**, **SQL**, **Power BI/Tableau**, and **Excel** with strong communication and leadership skills—bridging the gap between data, strategy, and execution.
+Specialization in connecting data with strategic decision-making — blending technical tools with business acumen to improve performance across operations, forecasting, and reporting. My approach combines **data interpretation**, **problem-solving**, and **cross-functional collaboration** to deliver solutions that enhance productivity and organizational clarity.
+
+Proficient in **Python**, **R**, **SQL**, **Tableau**, **Power BI**, and **Excel**, applying these tools to create analytical dashboards, optimize workflows, and support executive decision-making.  
+Bringing a unique mix of analytical depth, strategic thinking, and leadership developed through both academic training and hands-on management experience.
 
 ![](images/headshot.jpg){.headshot width=160}
 
-[LinkedIn](https://www.linkedin.com/in/eothmane/) ·
-[GitHub](https://github.com/Othmane-Elouardi) ·
+[LinkedIn](https://www.linkedin.com/in/eothmane/){target=_blank} ·
+[GitHub](https://github.com/Othmane-Elouardi){target=_blank} ·
 <a href="cv.pdf" download>Download CV</a>
 
+<hr class="subdivider">
+
+### Professional Experience
+
+**Assistant Department Manager — Willy Street Co-op, Madison, WI (2019 – Present)**  
+As a key operational leader, I’ve integrated **data analytics** and **strategic process improvement** into daily operations, enabling more efficient service delivery and informed decision-making.
+
+- Designed and implemented **data-informed initiatives** to optimize inventory, staffing, and service performance.  
+- Utilized analytics tools to identify operational inefficiencies, forecast demand, and track performance metrics.  
+- Collaborated across departments to develop KPI dashboards and streamline reporting workflows.  
+- Led staff training and development focused on measurable outcomes, resulting in improved retention and productivity.  
+- Supported business growth by combining **quantitative insights** with customer-centric strategies to enhance profitability.
+
+<p class="muted small">
+My role bridges analytics, leadership, and operational strategy — ensuring business intelligence directly supports daily execution and long-term performance.
+</p>
+
+<hr class="subdivider">
+
+### Education
+
+**M.S., Applied Business Analytics** — Boston University (MET)  
+**Technical Diploma, Business Management** — Madison College  
+**M.A., Communication in Contexts: Culture & Dialogue** — University Moulay Ismail  
+**B.A., English Studies** — University Sidi Mohamed Ben Abdellah
 
 </div>
 :::
@@ -48,77 +77,174 @@ I combine technical proficiency in **Python**, **R**, **SQL**, **Power BI/Tablea
 <details open>
   <summary><strong>Analytics & Decision Support</strong></summary>
   <ul>
-    <li>Exploratory Analysis · KPI Design · Executive Reporting</li>
-    <li>Forecasting · Scenario Modeling (Python/R, Excel)</li>
-    <li>Data-driven recommendations for strategic planning</li>
+    <li>Advanced data analysis using Python (pandas, NumPy, scikit-learn) and R for business intelligence and forecasting</li>
+    <li>Executive reporting and visualization using Power BI, Tableau, and Excel for KPI tracking and performance insights</li>
+    <li>Statistical modeling, forecasting, and scenario simulation to support data-driven strategic planning</li>
+    <li>Data cleaning, transformation, and validation for accurate and actionable insights</li>
+    <li>Building automated reporting systems that streamline decision-making across business functions</li>
   </ul>
 </details>
 
 <details>
   <summary><strong>Operations & Optimization</strong></summary>
   <ul>
-    <li>Process Mapping · Bottleneck Discovery · Workflow Automation</li>
-    <li>Operational Dashboards (Power BI/Tableau)</li>
-    <li>Continuous Improvement & Lean Principles</li>
+    <li>Process improvement and efficiency analysis through workflow automation and operational dashboards</li>
+    <li>Data-driven resource allocation and inventory forecasting to reduce waste and improve service levels</li>
+    <li>Cross-functional collaboration to identify performance gaps and design data-backed solutions</li>
+    <li>Implementation of continuous improvement frameworks using Lean and Six Sigma methodologies</li>
+    <li>Operational KPI development and performance tracking to align business outcomes with strategic objectives</li>
   </ul>
 </details>
 
 <details>
   <summary><strong>Tools & Methods</strong></summary>
   <ul>
-    <li>Python (pandas, scikit-learn) · R · SQL · Power BI/Tableau · Excel</li>
-    <li>Segmentation · Regression · Time-Series Modeling</li>
-    <li>Git/GitHub · Quarto</li>
+    <li>Languages: Python, R, SQL</li>
+    <li>Visualization: Power BI, Tableau, Excel (PivotTables, Power Query)</li>
+    <li>Data Management: MySQL, PostgreSQL, Excel, CSV, and API-based data pipelines</li>
+    <li>Analytics Techniques: Regression, Clustering, Time-Series Forecasting, Hypothesis Testing</li>
+    <li>Project Tools: Git/GitHub, Quarto, Jupyter, VS Code</li>
+    <li>Cloud & Automation: AWS EC2, Google Sheets integration, data workflow automation</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Business Strategy & Communication</strong></summary>
+  <ul>
+    <li>Translating complex data into clear narratives for executives and stakeholders</li>
+    <li>Bridging technical and non-technical teams to align insights with organizational goals</li>
+    <li>Developing business cases using data-driven evidence to support strategic initiatives</li>
+    <li>Creating compelling visualizations and dashboards to tell the story behind the numbers</li>
+    <li>Strong communication and presentation skills developed through leadership and training roles</li>
   </ul>
 </details>
 </div>
 :::
 
+
+
+
+
 ::: {#projects .band .band--dark}
 <div class="section">
-### Featured Projects
+<h2 class="text-center">Projects</h2>
+<p class="muted text-center">My independent projects & contributions</p>
 
-<div class="cards">
-  <div class="card">
-    <h4>Operational Efficiency Dashboard</h4>
-    <p>Automated an executive KPI view; unified data sources and standardized metrics for consistent decision-making.</p>
-    <ul>
-      <li><em>Impact:</em> 75% reduction in manual reporting</li>
-      <li><em>Stack:</em> Power BI, SQL, Excel</li>
-    </ul>
-    <details><summary><strong>Details</strong></summary>
-      Built a governed semantic layer, drill-through dashboards, and scheduled data refresh pipelines with validation checks.
-    </details>
-  </div>
-
-  <div class="card">
-    <h4>Predictive Business Forecasting</h4>
-    <p>Developed forecasting models to anticipate volume and revenue trends for staffing and inventory planning.</p>
-    <ul>
-      <li><em>Impact:</em> +20% forecast accuracy vs. baseline</li>
-      <li><em>Stack:</em> Python (pandas, scikit-learn), SQL</li>
-    </ul>
-    <details><summary><strong>Details</strong></summary>
-      Compared ETS and tree-based models using rolling backtests and MAPE; results fed into Power BI capacity planning.
-    </details>
-  </div>
-
-  <div class="card">
-    <h4>Pricing & Market Analysis</h4>
-    <p>Performed price elasticity and segmentation analysis to identify margin opportunities and targeted offers.</p>
-    <ul>
-      <li><em>Impact:</em> Defined clear growth levers with quantified risk bands</li>
-      <li><em>Stack:</em> Python, SQL, Tableau</li>
-    </ul>
-    <details><summary><strong>Details</strong></summary>
-      Conducted K-means segmentation, estimated elasticity bands, and delivered executive dashboards with actionable insights.
-    </details>
+```{=html}
+<!-- Project 1: AI vs Non-AI Career Analytics -->
+<div class="project">
+  <img src="images/code.jpg" alt="AI vs Non-AI Careers" class="project-img">
+  <div class="project-info">
+    <h3>AI vs Non-AI Career Analytics</h3>
+    <p>
+      A comprehensive <strong>data analytics project</strong> comparing global labor-market trends between AI-driven and non-AI careers. 
+      The analysis integrates <strong>public labor statistics, salary benchmarks, and job-growth indicators</strong> to evaluate how emerging technologies reshape workforce demand. 
+      Leveraged <strong>Python, Excel, and Power BI</strong> for data cleaning, exploratory analysis, and visualization to identify 
+      <strong>correlations between automation, wage dispersion, and career sustainability</strong>. 
+      Findings support <strong>strategic workforce planning and educational policy decisions</strong> through quantifiable evidence.
+    </p>
+    <a href="https://github.com/amoghc12/ai-vs-nonai-careers" target="_blank" class="btn btn-primary">View Project</a>
   </div>
 </div>
 
-<p class="muted small">Want more detail? Use the form below to contact me or download the CV above.</p>
+<!-- Project 2: Business Simulation -->
+<div class="project">
+  <img src="images/Business.jpg" alt="Business Simulation" class="project-img">
+  <div class="project-info">
+    <h3>Business Simulation</h3>
+    <p>
+      A multi-functional <strong>business analytics simulation</strong> enabling participants to manage a virtual organization across 
+      <strong>operations, finance, marketing, and supply-chain management</strong>. 
+      Applied <strong>scenario modeling and KPI tracking</strong> to assess profitability, operational efficiency, and long-term growth. 
+      Utilized <strong>forecasting, demand planning, and data-driven decision frameworks</strong> to demonstrate how analytical insight guides 
+      <strong>executive strategy and sustainable business development</strong>.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
+  </div>
+</div>
+
+<!-- Project 3: Fundraiser Project Management -->
+<div class="project">
+  <img src="images/Give.jpg" alt="Fundraiser Project Management" class="project-img">
+  <div class="project-info">
+    <h3>Fundraiser Project Management</h3>
+    <p>
+      A structured <strong>project-management and analytics case study</strong> following the complete <strong>project lifecycle</strong>—from concept and stakeholder planning 
+      through execution, monitoring, and closure. 
+      Emphasized <strong>risk analysis, resource optimization, and performance measurement</strong>, integrating 
+      <strong>Gantt scheduling and cost-variance analytics</strong> to improve project predictability. 
+      Showcased the role of <strong>data-informed leadership</strong> in coordinating teams, mitigating uncertainties, 
+      and ensuring successful outcomes within budget and timeline.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
+  </div>
+</div>
+
+<!-- Project 4: Quantitative Research Dissertation -->
+<div class="project">
+  <img src="images/Dissertation.jpg" alt="Quantitative Research Dissertation" class="project-img">
+  <div class="project-info">
+    <h3>Quantitative Research Dissertation</h3>
+    <p>
+      An empirical <strong>quantitative study</strong> grounded in <strong>survey design, statistical inference, and hypothesis testing</strong>. 
+      Utilized <strong>R and SPSS</strong> for reliability assessment, regression modeling, and factor analysis to validate conceptual relationships within the research framework. 
+      The project demonstrates advanced ability to <strong>translate theoretical constructs into measurable variables</strong> and to communicate findings 
+      through statistically sound interpretation and visualization.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
+  </div>
+</div>
+
+<style>
+  /* High-contrast, readable text on dark bg */
+  .project-info h3 { margin: 0 0 .4rem; color: #E9EEFB; font-weight: 800; }
+  .project-info p  { margin: 0 0 .8rem; color: #CFE3FF; line-height: 1.6; font-size: 1.02rem; }
+
+  /* Card layout */
+  .project {
+    display: flex;
+    gap: 1.25rem;
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    align-items: center;
+  }
+  .project-img {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+
+  /* Buttons */
+  .btn.btn-primary {
+    background-color: #74C0FF; color: #08101f; padding: .6rem 1rem;
+    border-radius: 999px; font-weight: 700; text-decoration: none; display: inline-block;
+  }
+  .btn.btn-primary:hover { background-color: #95D0FF; }
+
+  /* Mobile: stack vertical */
+  @media (max-width: 980px) {
+    .project { flex-direction: column; text-align: left; }
+    .project-img { width: 100%; }
+  }
+</style>
+```
+
 </div>
 :::
+
+
+
+
+
+
+
 
 ::: {#contact .band .band--accent}
 <div class="section">
@@ -128,9 +254,10 @@ Use this form to reach me — it goes directly to my inbox.
 
 <form id="contact-form" class="contact-form">
   <div class="grid">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="_replyto" placeholder="Your email" required>
+    <input type="text" name="first_name" placeholder="First name" required>
+    <input type="text" name="last_name" placeholder="Last name" required>
   </div>
+  <input type="email" name="_replyto" placeholder="Your email" required>
   <input type="text" name="company" placeholder="Company (optional)">
   <textarea name="message" rows="4" placeholder="Write your message..." required></textarea>
   <input type="text" name="_gotcha" style="display:none">
@@ -141,7 +268,7 @@ Use this form to reach me — it goes directly to my inbox.
 <!-- Wrangler / Cloudflare Worker notes:
   wrangler.toml
     [vars]
-    ALLOWED_ORIGIN = "https://othmane-elouardi.github.io"    # add localhost origin during dev if needed
+    ALLOWED_ORIGIN = "https://othmane-elouardi.github.io"
     FROM_EMAIL     = "website.onboarding@resend.dev"
     TO_EMAIL       = "othmaneelouardi@gmail.com"
   worker.js accepts JSON POST.
@@ -150,6 +277,13 @@ Use this form to reach me — it goes directly to my inbox.
 :::
 
 ```{=html}
+<style>
+.subdivider{
+  border:0;height:1px;margin:1.25rem 0 1rem;
+  background:linear-gradient(90deg, rgba(255,255,255,.06), transparent);
+}
+</style>
+
 <script>
 // ---------- Typewriter ----------
 const phrases=["Turning data into decisions","Optimizing operations with analytics","Driving measurable business impact"];
@@ -188,7 +322,6 @@ const spy=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:0.55});
-
 sections.forEach(s=>spy.observe(s));
 
 navLinks.forEach(a=>{
@@ -203,14 +336,13 @@ window.addEventListener('load',()=>{
   setActive(id);
 });
 
-// ---------- Force download on navbar "CV" (Quarto YAML can't add attributes) ----------
+// ---------- Force download on navbar "CV" ----------
 const navCv = document.querySelector('.navbar a[href$="cv.pdf"], .navbar .nav-link[href$="cv.pdf"]');
 if (navCv) { navCv.setAttribute('download',''); }
 
 // ---------- Cloudflare Worker AJAX (JSON) ----------
 const form=document.getElementById('contact-form');
 const statusEl=document.getElementById('form-status');
-// Replace with your actual Workers endpoint (or routed domain)
 const CONTACT_ENDPOINT='https://contact-endpoint.YOUR_SUBDOMAIN.workers.dev/';
 
 form.addEventListener('submit',async(e)=>{
@@ -218,7 +350,6 @@ form.addEventListener('submit',async(e)=>{
   statusEl.textContent='Sending...';
   const bot=(form.querySelector('[name="_gotcha"]')||{}).value||'';
   if(bot){ statusEl.textContent='Thanks!'; form.reset(); return; }
-
   const data=Object.fromEntries(new FormData(form).entries());
   try{
     const resp=await fetch(CONTACT_ENDPOINT,{
@@ -231,3 +362,7 @@ form.addEventListener('submit',async(e)=>{
   }catch(_){ statusEl.textContent='Network error. Please try again.'; }
 });
 </script>
+
+
+
+

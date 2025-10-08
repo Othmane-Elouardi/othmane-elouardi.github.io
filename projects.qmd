@@ -6,135 +6,98 @@ format:
     toc: false
 ---
 
-::: {.section}
-### Featured Projects
+::: {#projects .band .band--dark}
+<div class="section">
+<h2 class="text-center">Projects</h2>
+<p class="muted text-center">My independent projects & contributions</p>
 
-<div class="filters">
-  <button class="btn btn-outline active" data-filter="all">All</button>
-  <button class="btn btn-outline" data-filter="analytics">Analytics</button>
-  <button class="btn btn-outline" data-filter="ops">Operations</button>
-  <button class="btn btn-outline" data-filter="forecast">Forecasting</button>
-  <button class="btn btn-outline" data-filter="market">Market</button>
+<!-- Project 1: AI vs Non-AI Career Analytics -->
+<div class="project">
+  <img src="images/code.jpg" alt="AI vs Non-AI Careers" class="project-img">
+  <div class="project-info">
+    <h3>AI vs Non-AI Career Analytics</h3>
+    <p>
+      A data analytics study analyzing real-world labor data to compare growth, pay, and stability between AI-related vs. non-AI careers.
+      Focused on uncovering employment trends through statistical modeling and visualization.
+    </p>
+    <a href="https://github.com/amoghc12/ai-vs-nonai-careers" target="_blank" class="btn btn-primary">View Project</a>
+  </div>
 </div>
 
-<div class="cards projects-grid">
-
-  <!-- Operational Efficiency Dashboard -->
-  <div class="card project" data-tags="analytics ops">
-    <h4>Operational Efficiency Dashboard</h4>
-    <p>Automated an executive view of operational KPIs; unified data sources and standardized definitions for consistent decision-making.</p>
-    <ul>
-      <li><em>Impact:</em> 75% less manual reporting; improved cross-team alignment</li>
-      <li><em>Stack:</em> Power BI, SQL, Excel</li>
-    </ul>
-    <details>
-      <summary><strong>What I did</strong></summary>
-      <ul>
-        <li>Mapped disparate source tables to a governed semantic layer with clear metric ownership.</li>
-        <li>Designed drill-through dashboards for weekly business reviews and ad-hoc analysis.</li>
-        <li>Automated refresh with scheduled jobs and validation checks.</li>
-      </ul>
-    </details>
+<!-- Project 2: Business Simulation -->
+<div class="project">
+  <img src="images/Business.jpg" alt="Business Simulation" class="project-img">
+  <div class="project-info">
+    <h3>Business Simulation</h3>
+    <p>
+      A strategic business simulation where learners manage operations, inventory, marketing, and finance—making data-driven decisions
+      that shape performance and drive long-term business success.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
   </div>
-
-  <!-- Predictive Business Forecasting -->
-  <div class="card project" data-tags="analytics forecast">
-    <h4>Predictive Business Forecasting</h4>
-    <p>Built forecasting models to anticipate volume and revenue trends, informing staffing and inventory planning.</p>
-    <ul>
-      <li><em>Impact:</em> +20% forecast accuracy vs prior approach</li>
-      <li><em>Stack:</em> Python (pandas, scikit-learn), SQL</li>
-    </ul>
-    <details>
-      <summary><strong>What I did</strong></summary>
-      <ul>
-        <li>Developed and compared baselines (MA, ETS) with tree-based models; selected by MAPE + stability.</li>
-        <li>Implemented backtests with rolling windows and champion/challenger process.</li>
-        <li>Packaged output to feed Power BI visuals and capacity planning sheets.</li>
-      </ul>
-    </details>
-  </div>
-
-  <!-- Pricing & Market Analysis -->
-  <div class="card project" data-tags="analytics market">
-    <h4>Pricing & Market Analysis</h4>
-    <p>Performed price elasticity and customer segmentation to surface margin opportunities and targeted offers.</p>
-    <ul>
-      <li><em>Impact:</em> Clear levers for profitable growth and retention</li>
-      <li><em>Stack:</em> Python, SQL, Tableau</li>
-    </ul>
-    <details>
-      <summary><strong>What I did</strong></summary>
-      <ul>
-        <li>Built clustering (K-means) for segment discovery; profiled value drivers and churn risk.</li>
-        <li>Estimated elasticity bands; identified safe move corridors for promotional pricing.</li>
-        <li>Created exec-ready storyboards with insight → action recommendations.</li>
-      </ul>
-    </details>
-  </div>
-
-  <!-- Service Operations Optimization -->
-  <div class="card project" data-tags="ops analytics">
-    <h4>Service Operations Optimization</h4>
-    <p>Mapped end-to-end processes, identified bottlenecks, and optimized staffing and task routing.</p>
-    <ul>
-      <li><em>Impact:</em> Higher throughput with improved employee and customer experience</li>
-      <li><em>Stack:</em> Excel/Sheets, SQL, Python (sim/queues optional)</li>
-    </ul>
-    <details>
-      <summary><strong>What I did</strong></summary>
-      <ul>
-        <li>Time-and-motion and arrival pattern analysis; balanced queue discipline vs. SLA risk.</li>
-        <li>Introduced standardized SOPs and KPI scorecards.</li>
-        <li>Partnered with leads to embed the changes and monitor adoption.</li>
-      </ul>
-    </details>
-  </div>
-
-  <!-- Academic / Portfolio items -->
-  <div class="card project" data-tags="analytics market">
-    <h4>AI vs Non-AI Careers (Portfolio Study)</h4>
-    <p>Comparative analysis of market signals for AI vs. non-AI roles; trends, skills, and pay bands.</p>
-    <ul>
-      <li><em>Stack:</em> Python, CSV/JSON, GitHub</li>
-    </ul>
-    <details>
-      <summary><strong>What I did</strong></summary>
-      <ul>
-        <li>Collected and cleaned multiple open datasets; standardized job families and titles.</li>
-        <li>Produced visual summaries and a narrative readout.</li>
-      </ul>
-    </details>
-  </div>
-
 </div>
-:::
+
+<!-- Project 3: Fundraiser Project Management -->
+<div class="project">
+  <img src="images/Give.jpg" alt="Fundraiser Project Management" class="project-img">
+  <div class="project-info">
+    <h3>Fundraiser Project Management</h3>
+    <p>
+      A project management exercise covering the full lifecycle—from planning and execution to lessons learned—while identifying and
+      mitigating risks that could impact scope, schedule, and outcomes.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
+  </div>
+</div>
+
+<!-- Project 4: Quantitative Research Dissertation -->
+<div class="project">
+  <img src="images/Dissertation.jpg" alt="Quantitative Research Dissertation" class="project-img">
+  <div class="project-info">
+    <h3>Quantitative Research Dissertation</h3>
+    <p>
+      A quantitative research study based on literature review and a structured questionnaire to test a hypothesis; results analyzed with
+      appropriate statistical methods to validate findings.
+    </p>
+    <a href="#" class="btn btn-primary">View Project</a>
+  </div>
+</div>
 
 ```{=html}
-<script>
-// ---- reveal on scroll (reuses your index logic style) ----
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('reveal')}),{threshold:.12});
-document.querySelectorAll('.project').forEach(n=>io.observe(n));
+<style>
+  .project {
+    display: flex;
+    gap: 1.25rem;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 16px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    align-items: center;
+  }
+  .project-img {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 12px;
+    display: block;
+    flex-shrink: 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    border: 1px solid rgba(255,255,255,.10);
+  }
+  .project-info h3 { margin: 0 0 .4rem; color: #E9EEFB; }
+  .project-info p  { margin: 0 0 .8rem; color: #CFE3FF; line-height: 1.6; }
+  .btn.btn-primary {
+    background-color: #74C0FF; color: #08101f; padding: .6rem 1rem;
+    border-radius: 999px; font-weight: 700; text-decoration: none; display: inline-block;
+  }
+  .btn.btn-primary:hover { background-color: #95D0FF; }
 
-// ---- simple client-side filter ----
-const buttons=[...document.querySelectorAll('.filters .btn')];
-const cards=[...document.querySelectorAll('.project')];
-
-function applyFilter(tag){
-  cards.forEach(c=>{
-    const tags=(c.dataset.tags||'').split(' ');
-    const show=(tag==='all') || tags.includes(tag);
-    c.style.display= show ? '' : 'none';
-  });
-}
-
-buttons.forEach(b=>{
-  b.addEventListener('click', ()=>{
-    buttons.forEach(x=>x.classList.remove('active'));
-    b.classList.add('active');
-    applyFilter(b.dataset.filter);
-  });
-});
-
-applyFilter('all');
-</script>
+  /* Mobile stacking */
+  @media (max-width: 980px) {
+    .project { flex-direction: column; text-align: left; }
+    .project-img { width: 100%; }
+  }
+</style>
+```
+</div>
+:::
