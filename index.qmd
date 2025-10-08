@@ -260,7 +260,8 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
   <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
   <p id="form-status" class="muted" style="margin-top:.5rem;"></p>
 </form>
-</div> ::: ```
+</div> 
+::: 
 
 <!-- Wrangler / Cloudflare Worker notes:
   wrangler.toml
