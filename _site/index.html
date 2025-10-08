@@ -413,6 +413,7 @@ My independent projects &amp; contributions
 </style>
 </div>
 <div id="contact" class="band band--accent">
+<section>
 <h3 class="anchored">
 Contact Me
 </h3>
@@ -420,20 +421,19 @@ Contact Me
 Use this form to reach me — it goes directly to my inbox.
 </p>
 <form id="contact-form" class="contact-form" autocomplete="on" novalidate="">
-<div class="grid">
-<pre><code>&lt;input type="text" name="first_name" placeholder="First name" required&gt;
-&lt;input type="text" name="last_name" placeholder="Last name" required&gt;</code></pre>
-</div>
-<input type="email" name="_replyto" placeholder="Your email" required="" inputmode="email" autocomplete="email"> <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
+<!-- stacked, always -->
+<input type="text" name="first_name" placeholder="First name" required=""> <input type="text" name="last_name" placeholder="Last name" required=""> <input type="email" name="_replyto" placeholder="Your email" required="" inputmode="email" autocomplete="email"> <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
 <textarea name="message" rows="4" placeholder="Write your message..." required=""></textarea>
 <!-- Honeypot -->
-<p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;"></p>
+<p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px"></p>
 <button type="submit" class="btn btn-primary" id="contact-submit">
 Send Message
 </button>
 <p id="form-status" class="muted" style="margin-top:.5rem;">
 </p>
 </form>
+</section>
+<p>::: ```</p>
 <!-- Wrangler / Cloudflare Worker notes:
   wrangler.toml
     [vars]
@@ -506,26 +506,46 @@ const navCv = document.querySelector('.navbar a[href$="cv.pdf"], .navbar .nav-li
 if (navCv) { navCv.setAttribute('download',''); }
 
 // ---------- Cloudflare Worker AJAX (JSON) ----------
-const form=document.getElementById('contact-form');
-const statusEl=document.getElementById('form-status');
-const CONTACT_ENDPOINT='https://contact-endpoint.YOUR_SUBDOMAIN.workers.dev/';
+const form = document.getElementById('contact-form');
+const statusEl = document.getElementById('form-status');
 
-form.addEventListener('submit',async(e)=>{
+// Use your deployed Workers URL:
+const CONTACT_ENDPOINT = 'https://contact-endpoint.othmaneelouardi.workers.dev';
+
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  statusEl.textContent='Sending...';
-  const bot=(form.querySelector('[name="_gotcha"]')||{}).value||'';
-  if(bot){ statusEl.textContent='Thanks!'; form.reset(); return; }
-  const data=Object.fromEntries(new FormData(form).entries());
-  try{
-    const resp=await fetch(CONTACT_ENDPOINT,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(data)
+  statusEl.textContent = 'Sending...';
+
+  // Honeypot
+  const bot = (form.querySelector('[name="_gotcha"]') || {}).value || '';
+  if (bot) { statusEl.textContent = 'Thanks!'; form.reset(); return; }
+
+  // Build payload (Worker expects email + message; we also send a combined name)
+  const data = Object.fromEntries(new FormData(form).entries());
+  data.name = `${data.first_name || ''} ${data.last_name || ''}`.trim();
+
+  try {
+    const resp = await fetch(CONTACT_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     });
-    if(resp.ok){ form.reset(); statusEl.textContent='Thanks! Your message has been sent.'; }
-    else{ statusEl.textContent='Something went wrong. Please try again.'; }
-  }catch(_){ statusEl.textContent='Network error. Please try again.'; }
+
+    if (resp.ok) {
+      form.reset();
+      statusEl.textContent = 'Thanks! Your message has been sent.';
+    } else {
+      const err = await resp.text().catch(() => '');
+      console.warn('Contact form error', resp.status, err);
+      statusEl.textContent = 'Something went wrong. Please try again.';
+    }
+  } catch (err) {
+    console.warn('Contact form network error', err);
+    statusEl.textContent = 'Network error. Please try again.';
+  }
 });
+
+
 </script>
 
 

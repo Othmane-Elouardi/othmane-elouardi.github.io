@@ -241,26 +241,26 @@ My role bridges analytics, leadership, and operational strategy — ensuring bus
 
 
 ::: {#contact .band .band--accent}
+<div class="section">
 <h3>Contact Me</h3>
 <p>Use this form to reach me — it goes directly to my inbox.</p>
 
+```{=html}
 <form id="contact-form" class="contact-form" autocomplete="on" novalidate>
-  <div class="grid">
-    <input type="text" name="first_name" placeholder="First name" required>
-    <input type="text" name="last_name" placeholder="Last name" required>
-  </div>
-
-  <input type="email" name="_replyto" placeholder="Your email" required inputmode="email" autocomplete="email">
-  <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
+  <!-- stacked, always -->
+  <input type="text"  name="first_name" placeholder="First name" required>
+  <input type="text"  name="last_name"  placeholder="Last name" required>
+  <input type="email" name="_replyto"   placeholder="Your email" required inputmode="email" autocomplete="email">
+  <input type="text"  name="company"    placeholder="Company (optional)" autocomplete="organization">
   <textarea name="message" rows="4" placeholder="Write your message..." required></textarea>
 
   <!-- Honeypot -->
-  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
 
   <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
   <p id="form-status" class="muted" style="margin-top:.5rem;"></p>
 </form>
-
+</div> ::: ```
 
 <!-- Wrangler / Cloudflare Worker notes:
   wrangler.toml
