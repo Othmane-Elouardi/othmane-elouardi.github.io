@@ -413,6 +413,7 @@ My independent projects &amp; contributions
 </style>
 </div>
 <div id="contact" class="band band--accent">
+<section>
 <h3 class="anchored">
 Contact Me
 </h3>
@@ -420,20 +421,19 @@ Contact Me
 Use this form to reach me — it goes directly to my inbox.
 </p>
 <form id="contact-form" class="contact-form" autocomplete="on" novalidate="">
-<div class="grid">
-<pre><code>&lt;input type="text" name="first_name" placeholder="First name" required&gt;
-&lt;input type="text" name="last_name" placeholder="Last name" required&gt;</code></pre>
-</div>
-<input type="email" name="_replyto" placeholder="Your email" required="" inputmode="email" autocomplete="email"> <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
+<!-- stacked, always -->
+<input type="text" name="first_name" placeholder="First name" required=""> <input type="text" name="last_name" placeholder="Last name" required=""> <input type="email" name="_replyto" placeholder="Your email" required="" inputmode="email" autocomplete="email"> <input type="text" name="company" placeholder="Company (optional)" autocomplete="organization">
 <textarea name="message" rows="4" placeholder="Write your message..." required=""></textarea>
 <!-- Honeypot -->
-<p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;"></p>
+<p><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px"></p>
 <button type="submit" class="btn btn-primary" id="contact-submit">
 Send Message
 </button>
 <p id="form-status" class="muted" style="margin-top:.5rem;">
 </p>
 </form>
+</section>
+<p>::: ```</p>
 <!-- Wrangler / Cloudflare Worker notes:
   wrangler.toml
     [vars]

@@ -504,3 +504,19 @@ details[open] > summary::after {
   box-shadow: 0 0 0 3px rgba(106,169,255,.25);
 }
 </style>
+
+
+
+
+.contact-form .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+### Minimal CSS (add if you don’t already have it)
+```css
+/* 2-up first/last name; stacks on mobile */
+.contact-form .grid { display: grid; gap: .75rem; }
+.contact-form .grid-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px){ .contact-form .grid-2 { grid-template-columns: 1fr; } }
