@@ -508,15 +508,32 @@ details[open] > summary::after {
 
 
 
-.contact-form .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+
+/* --- Make Quarto search UI appear above the sticky header --- */
+header#quarto-header,
+.navbar,
+.navbar-dark {
+  z-index: 9000; /* keep high, but below search */
 }
 
-### Minimal CSS (add if you don’t already have it)
-```css
-/* 2-up first/last name; stacks on mobile */
-.contact-form .grid { display: grid; gap: .75rem; }
-.contact-form .grid-2 { grid-template-columns: 1fr 1fr; }
-@media (max-width: 640px){ .contact-form .grid-2 { grid-template-columns: 1fr; } }
+/* Algolia/Quarto search layers */
+.quarto-search,
+.aa-DetachedOverlay,
+.aa-DetachedContainer,
+.aa-DetachedFormContainer,
+.aa-Panel,
+.aa-PanelLayout,
+.aa-Autocomplete {
+  z-index: 30000 !important; /* higher than header */
+}
+
+/* Ensure overlay covers the viewport cleanly */
+.aa-DetachedOverlay {
+  position: fixed !important;
+  inset: 0 !important;
+}
+
+/* Optional: when search is open, let clicks go to the overlay instead of header */
+body:has(.aa-DetachedOverlay) header#quarto-header {
+  pointer-events: none;
+}
