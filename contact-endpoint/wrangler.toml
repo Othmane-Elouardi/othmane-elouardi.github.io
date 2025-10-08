@@ -1,0 +1,13 @@
+name = "contact-endpoint"
+main = "src/worker.js"
+compatibility_date = "2024-10-01"
+
+[vars]
+# Only your site origin(s) can POST:
+ALLOWED_ORIGIN = "https://othmane-elouardi.github.io"
+# For local testing you can temporarily allow localhost:
+# ALLOWED_ORIGIN = "http://localhost:8080"
+
+# Email settings
+FROM_EMAIL = "website <onboarding@resend.dev>"   # Resend “from” that works without domain setup
+TO_EMAIL   = "othmaneelouardi@gmail.com"         # Where you'll receive messages

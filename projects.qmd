@@ -1,0 +1,140 @@
+---
+title: "Projects"
+page-layout: full
+format:
+  html:
+    toc: false
+---
+
+::: {.section}
+### Featured Projects
+
+<div class="filters">
+  <button class="btn btn-outline active" data-filter="all">All</button>
+  <button class="btn btn-outline" data-filter="analytics">Analytics</button>
+  <button class="btn btn-outline" data-filter="ops">Operations</button>
+  <button class="btn btn-outline" data-filter="forecast">Forecasting</button>
+  <button class="btn btn-outline" data-filter="market">Market</button>
+</div>
+
+<div class="cards projects-grid">
+
+  <!-- Operational Efficiency Dashboard -->
+  <div class="card project" data-tags="analytics ops">
+    <h4>Operational Efficiency Dashboard</h4>
+    <p>Automated an executive view of operational KPIs; unified data sources and standardized definitions for consistent decision-making.</p>
+    <ul>
+      <li><em>Impact:</em> 75% less manual reporting; improved cross-team alignment</li>
+      <li><em>Stack:</em> Power BI, SQL, Excel</li>
+    </ul>
+    <details>
+      <summary><strong>What I did</strong></summary>
+      <ul>
+        <li>Mapped disparate source tables to a governed semantic layer with clear metric ownership.</li>
+        <li>Designed drill-through dashboards for weekly business reviews and ad-hoc analysis.</li>
+        <li>Automated refresh with scheduled jobs and validation checks.</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- Predictive Business Forecasting -->
+  <div class="card project" data-tags="analytics forecast">
+    <h4>Predictive Business Forecasting</h4>
+    <p>Built forecasting models to anticipate volume and revenue trends, informing staffing and inventory planning.</p>
+    <ul>
+      <li><em>Impact:</em> +20% forecast accuracy vs prior approach</li>
+      <li><em>Stack:</em> Python (pandas, scikit-learn), SQL</li>
+    </ul>
+    <details>
+      <summary><strong>What I did</strong></summary>
+      <ul>
+        <li>Developed and compared baselines (MA, ETS) with tree-based models; selected by MAPE + stability.</li>
+        <li>Implemented backtests with rolling windows and champion/challenger process.</li>
+        <li>Packaged output to feed Power BI visuals and capacity planning sheets.</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- Pricing & Market Analysis -->
+  <div class="card project" data-tags="analytics market">
+    <h4>Pricing & Market Analysis</h4>
+    <p>Performed price elasticity and customer segmentation to surface margin opportunities and targeted offers.</p>
+    <ul>
+      <li><em>Impact:</em> Clear levers for profitable growth and retention</li>
+      <li><em>Stack:</em> Python, SQL, Tableau</li>
+    </ul>
+    <details>
+      <summary><strong>What I did</strong></summary>
+      <ul>
+        <li>Built clustering (K-means) for segment discovery; profiled value drivers and churn risk.</li>
+        <li>Estimated elasticity bands; identified safe move corridors for promotional pricing.</li>
+        <li>Created exec-ready storyboards with insight → action recommendations.</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- Service Operations Optimization -->
+  <div class="card project" data-tags="ops analytics">
+    <h4>Service Operations Optimization</h4>
+    <p>Mapped end-to-end processes, identified bottlenecks, and optimized staffing and task routing.</p>
+    <ul>
+      <li><em>Impact:</em> Higher throughput with improved employee and customer experience</li>
+      <li><em>Stack:</em> Excel/Sheets, SQL, Python (sim/queues optional)</li>
+    </ul>
+    <details>
+      <summary><strong>What I did</strong></summary>
+      <ul>
+        <li>Time-and-motion and arrival pattern analysis; balanced queue discipline vs. SLA risk.</li>
+        <li>Introduced standardized SOPs and KPI scorecards.</li>
+        <li>Partnered with leads to embed the changes and monitor adoption.</li>
+      </ul>
+    </details>
+  </div>
+
+  <!-- Academic / Portfolio items -->
+  <div class="card project" data-tags="analytics market">
+    <h4>AI vs Non-AI Careers (Portfolio Study)</h4>
+    <p>Comparative analysis of market signals for AI vs. non-AI roles; trends, skills, and pay bands.</p>
+    <ul>
+      <li><em>Stack:</em> Python, CSV/JSON, GitHub</li>
+    </ul>
+    <details>
+      <summary><strong>What I did</strong></summary>
+      <ul>
+        <li>Collected and cleaned multiple open datasets; standardized job families and titles.</li>
+        <li>Produced visual summaries and a narrative readout.</li>
+      </ul>
+    </details>
+  </div>
+
+</div>
+:::
+
+```{=html}
+<script>
+// ---- reveal on scroll (reuses your index logic style) ----
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('reveal')}),{threshold:.12});
+document.querySelectorAll('.project').forEach(n=>io.observe(n));
+
+// ---- simple client-side filter ----
+const buttons=[...document.querySelectorAll('.filters .btn')];
+const cards=[...document.querySelectorAll('.project')];
+
+function applyFilter(tag){
+  cards.forEach(c=>{
+    const tags=(c.dataset.tags||'').split(' ');
+    const show=(tag==='all') || tags.includes(tag);
+    c.style.display= show ? '' : 'none';
+  });
+}
+
+buttons.forEach(b=>{
+  b.addEventListener('click', ()=>{
+    buttons.forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    applyFilter(b.dataset.filter);
+  });
+});
+
+applyFilter('all');
+</script>

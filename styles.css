@@ -1,1 +1,419 @@
-/* css styles */
+:root {
+  --bg: #0b0f1a;
+  --bg2: #0f1526;
+  --text: #e9eefb;
+  --muted: #a8b3cf;
+  --accent: #6aa9ff;
+  --accent2: #37f3c0;
+  --card: #11182a;
+  --cardBorder: #1b2540;
+}
+
+/* ===== Force Dark Background Sitewide ===== */
+html,
+body,
+#quarto-content,
+.quarto-container,
+.page-columns,
+.page-columns > .content,
+main.content,
+div.content,
+section,
+footer {
+  background: linear-gradient(180deg, var(--bg), var(--bg2)) !important;
+  color: var(--text) !important;
+}
+
+/* Global */
+body {
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.92;
+}
+.navbar,
+.navbar-dark {
+  background: rgba(11, 15, 26, 0.6) !important;
+  backdrop-filter: blur(6px);
+}
+
+/* Sticky navbar + active highlight */
+header#quarto-header {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+.headroom--unpinned {
+  transform: translateY(0) !important;
+}
+.navbar a.active,
+.navbar .nav-link.active {
+  color: var(--accent2) !important;
+  border-bottom: 2px solid var(--accent2);
+  font-weight: 700;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 6rem 1rem 3rem;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  margin: 0;
+}
+.hero h1 .accent {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero h2 {
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  color: var(--muted);
+  margin: 0.6rem 0 1.2rem;
+  min-height: 2rem;
+}
+.cursor {
+  opacity: 0.8;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+.cta {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Glowing background orbs */
+.bg-orbs::before,
+.bg-orbs::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  filter: blur(60px);
+  opacity: 0.35;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+}
+.bg-orbs::before {
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--accent2),
+    transparent 60%
+  );
+  top: -180px;
+  right: -120px;
+}
+.bg-orbs::after {
+  background: radial-gradient(
+    circle at 70% 70%,
+    var(--accent),
+    transparent 60%
+  );
+  bottom: -220px;
+  left: -140px;
+}
+
+/* Sections */
+.section {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: 0.6s ease;
+  padding: 3rem 0 2.2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  color: var(--text);
+}
+.section.reveal {
+  opacity: 1;
+  transform: none;
+}
+.section.alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 2.2rem 1.2rem;
+}
+.section h3,
+.section h2 {
+  margin-bottom: 0.8rem;
+  color: var(--text);
+}
+.section p,
+.section li {
+  color: var(--text);
+}
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 0.95rem;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.card {
+  background: linear-gradient(180deg, var(--card), #0c1325);
+  border: 1px solid var(--cardBorder);
+  border-radius: 16px;
+  padding: 1.1rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.6s ease;
+}
+.card.reveal {
+  opacity: 1;
+  transform: none;
+}
+.card p {
+  color: var(--muted);
+}
+.card-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Headshot */
+.headshot {
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Expandable Skills */
+details {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cardBorder);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.6rem;
+}
+details[open] {
+  background: rgba(255, 255, 255, 0.05);
+}
+details > summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: var(--text);
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::after {
+  content: "▾";
+  float: right;
+  opacity: 0.7;
+}
+details[open] > summary::after {
+  content: "▴";
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 720px;
+  margin: 1rem auto 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.contact-form .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--cardBorder);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--muted);
+}
+.contact-form button {
+  width: fit-content;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 999px;
+  padding: 0.72rem 1.2rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn-primary {
+  background: var(--accent);
+  color: #08101f;
+}
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+.btn-ghost {
+  color: var(--muted);
+}
+
+/* Make anchor targets account for the sticky navbar height */
+.section[id], .hero[id] { scroll-margin-top: 80px; }
+.navbar a.active, .navbar .nav-link.active {
+  color: var(--accent2) !important;
+  border-bottom: 2px solid var(--accent2);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(55,243,192,.45);
+}
+/* Section highlight when active */
+.section {
+  transition: box-shadow .35s ease, border-color .35s ease, background .35s ease;
+  border: 1px solid transparent;
+}
+.section.current {
+  background: linear-gradient(180deg, rgba(123,255,202,.06), rgba(123,255,202,.03));
+  border-color: rgba(55,243,192,.35);
+  box-shadow:
+    0 0 0 1px rgba(55,243,192,.25) inset,
+    0 10px 30px rgba(0,0,0,.25),
+    0 0 18px rgba(55,243,192,.20);
+}
+
+/* Optional: accent the section heading when active */
+.section.current h2,
+.section.current h3 {
+  color: var(--accent2);
+  text-shadow: 0 0 10px rgba(55,243,192,.35);
+}
+/* === Highlight the section that is currently in view === */
+/* base */
+.section {
+  transition: box-shadow .35s ease, border-color .35s ease, background .35s ease;
+  border: 1px solid transparent;
+}
+
+/* active (works even when .alt adds its own bg) */
+.section.current,
+.section.alt.current {
+  background: linear-gradient(180deg, rgba(123,255,202,.08), rgba(123,255,202,.03)) !important;
+  border-color: rgba(55,243,192,.45) !important;
+  box-shadow:
+    0 0 0 1px rgba(55,243,192,.25) inset,
+    0 10px 30px rgba(0,0,0,.25),
+    0 0 18px rgba(55,243,192,.20);
+}
+
+/* accent the heading of the active section */
+.section.current h2,
+.section.current h3 {
+  color: var(--accent2) !important;
+  text-shadow: 0 0 10px rgba(55,243,192,.35);
+}
+
+/* ensure anchors scroll below the sticky header */
+.section[id], .hero[id] { scroll-margin-top: 80px; }
+/* Projects page filter bar */
+.filters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin: .5rem 0 1rem;
+}
+.filters .btn.active {
+  background: var(--accent);
+  color: #08101f;
+  border-color: var(--accent);
+}
+.projects-grid .card details { margin-top: .6rem; }
+
+/* ===== Full-width bands (unique area per section) ===== */
+.band {
+  position: relative;
+  width: 100%;
+  padding: 0;               /* inner spacing handled by .section */
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.band:first-of-type { border-top: none; }
+.band + .band {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* inner content area */
+.band > .section {
+  max-width: 1100px;
+  padding: 4rem 1.25rem;
+  margin: 0 auto;
+}
+
+/* visual variants */
+.band--glass {
+  background:
+    radial-gradient(1200px 400px at 85% -10%, rgba(106,169,255,.10), transparent 60%),
+    radial-gradient(1200px 400px at -10% 110%, rgba(55,243,192,.08), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  backdrop-filter: saturate(110%) blur(2px);
+}
+
+.band--grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  background-size: 22px 22px, 22px 22px, 100% 100%;
+  background-position: 0 0, 0 0, 0 0;
+}
+
+.band--dark {
+  background: linear-gradient(180deg, #0a1020, #0b1426);
+}
+
+.band--accent {
+  background:
+    radial-gradient(900px 280px at 20% -10%, rgba(123,255,202,.10), transparent 60%),
+    radial-gradient(900px 280px at 120% 120%, rgba(106,169,255,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+}
+
+/* highlight the active section band */
+.band.current > .section {
+  background: linear-gradient(180deg, rgba(123,255,202,.08), rgba(123,255,202,.03)) !important;
+  border: 1px solid rgba(55,243,192,.45) !important;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px rgba(55,243,192,.25) inset,
+    0 10px 30px rgba(0,0,0,.25),
+    0 0 18px rgba(55,243,192,.16);
+}
+
+/* ensure anchors don't hide under sticky navbar */
+.band[id] { scroll-margin-top: 80px; }

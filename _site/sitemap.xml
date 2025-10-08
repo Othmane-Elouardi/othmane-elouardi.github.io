@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://othmane-elouardi.github.io/contact.html</loc>
+    <lastmod>2025-10-07T21:42:26.664Z</lastmod>
+  </url>
+  <url>
+    <loc>https://othmane-elouardi.github.io/projects.html</loc>
+    <lastmod>2025-10-07T23:13:36.200Z</lastmod>
+  </url>
+  <url>
     <loc>https://othmane-elouardi.github.io/index.html</loc>
-    <lastmod>2025-09-12T02:46:50.214Z</lastmod>
+    <lastmod>2025-10-08T01:54:08.143Z</lastmod>
+  </url>
+  <url>
+    <loc>https://othmane-elouardi.github.io/Projects.html</loc>
+    <lastmod>2025-10-07T23:11:27.083Z</lastmod>
+  </url>
+  <url>
+    <loc>https://othmane-elouardi.github.io/about.html</loc>
+    <lastmod>2025-10-07T23:16:20.307Z</lastmod>
+  </url>
+  <url>
+    <loc>https://othmane-elouardi.github.io/cv.html</loc>
+    <lastmod>2025-10-07T21:47:41.532Z</lastmod>
   </url>
 </urlset>

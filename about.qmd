@@ -1,5 +1,86 @@
 ---
-title: "About"
+title: "About Me"
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-About this site
+::: {.section}
+### About Me
+
+I am a results-driven **Business Analyst** with a graduate background in **Applied Business Analytics** and a track record of improving business performance through **data-driven insights** and **strategic process optimization**.  
+I specialize in translating complex datasets into actionable intelligence that enhances operational efficiency, supports executive decision-making, and delivers measurable business outcomes.
+
+My analytical approach combines technical fluency in tools such as **Python**, **R**, **SQL**, and **Power BI** with strong communication and stakeholder management skills—bridging the gap between data, strategy, and execution.
+
+![](images/headshot.jpg){.headshot width=160}
+
+[LinkedIn](https://www.linkedin.com/in/eothmane/){target=_blank} ·
+[GitHub](https://github.com/Othmane-Elouardi){target=_blank} ·
+[Request CV](index.qmd#contact)
+
+---
+
+<details open>
+  <summary><strong>Professional Experience</strong></summary>
+
+**Assistant Department Manager — Willy Street Co-op, Madison, WI (2019 – Present)**  
+- Led **data-driven operational initiatives**, improving service delivery and inventory management through performance analytics and demand forecasting.  
+- Designed **process-efficiency models** that enhanced employee productivity and optimized staffing levels across shifts.  
+- Partnered cross-functionally to identify and solve business problems using data insights, improving departmental communication and workflow alignment.  
+- Developed **KPIs** to monitor staff performance, loss prevention, and sales metrics, contributing to sustained revenue growth.  
+- Mentored and trained new staff while fostering a culture of accountability and continuous improvement.
+
+</details>
+
+<details open>
+  <summary><strong>Education</strong></summary>
+
+**Master of Science in Applied Business Analytics** — *Boston University Metropolitan College*, Boston, MA  
+Focused on predictive analytics, statistical modeling, and business intelligence solutions.
+
+**Technical Diploma in Business Management** — *Madison College*, Madison, WI  
+Emphasized managerial accounting, operations, and organizational leadership.
+
+**Master of Arts in Communication in Contexts: Culture & Dialogue** — *University Moulay Ismail*, Meknes, Morocco  
+Researched cross-cultural communication and information exchange frameworks.
+
+**Bachelor of Arts in English Studies** — *University Sidi Mohamed Ben Abdellah*, Fes, Morocco
+
+</details>
+
+<details>
+  <summary><strong>Skills</strong></summary>
+
+- **Analytical Tools:** Python · R · SQL · Tableau · Power BI · Excel  
+- **Core Competencies:** Data Interpretation · Business Forecasting · KPI Design · Process Optimization · Decision Support  
+- **Soft Skills:** Leadership · Cross-functional Collaboration · Communication · Problem-solving · Time Management  
+- **Languages:** English (Professional) · Arabic (Native) · French (Intermediate)
+
+</details>
+
+<details>
+  <summary><strong>Certificates</strong></summary>
+
+- **Leadership Certificate** — Madison College (2024)  
+- **Human Resources Certificate** — Madison College (2023)  
+- **Supervision Certificate** — Madison College (2022)
+
+</details>
+
+<details>
+  <summary><strong>Academic & Portfolio Projects</strong></summary>
+
+- **AI vs Non-AI Careers Market Analysis:** Applied Python-based analytics to evaluate employment trends and forecast skill demand in AI-driven sectors.  
+- **SmartSims Business Management Simulation:** Designed strategic models for pricing, marketing, and operations in a virtual business environment.  
+- **Nonprofit Fundraiser Project:** Used project-management and financial-tracking tools to increase donor engagement for a local Madison initiative.  
+- **Graduate Research:** *Cultural Oneness in the Making of the Moroccan Culture* — Explored cultural integration and communication dynamics.
+
+</details>
+
+<div class="cta" style="margin-top:.5rem">
+  <a class="btn btn-primary" href="projects.qmd">View Projects</a>
+  <a class="btn btn-outline" href="index.qmd#contact">Request CV</a>
+</div>
+:::

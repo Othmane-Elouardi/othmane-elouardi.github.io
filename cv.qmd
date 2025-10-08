@@ -1,0 +1,7 @@
+---
+title: "CV"
+---
+
+[**Download CV (PDF)**](cv.pdf){download .btn .btn-primary}
+
+Brief summary, then sections…

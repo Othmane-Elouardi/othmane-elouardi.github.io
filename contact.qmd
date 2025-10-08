@@ -1,0 +1,7 @@
+---
+title: "Contact"
+---
+
+- Email: [othmane@example.com](mailto:othmane@example.com)
+- LinkedIn: [linkedin.com/in/eothmane](https://www.linkedin.com/in/eothmane/){target=_blank}
+- GitHub: [github.com/othmaneelouardi1](https://github.com/othmaneelouardi1){target=_blank}

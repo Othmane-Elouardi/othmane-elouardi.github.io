@@ -1,22 +1,30 @@
+
 project:
   type: website
 
 website:
   title: "Othmane Elouardi"
-  site-url: https://othmane-elouardi.github.io
+  site-url: "https://othmane-elouardi.github.io"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-        text: About
+      - text: Home
+        href: index.qmd#home
+      - text: About
+        href: index.qmd#about
+      - text: Skills
+        href: index.qmd#skills
+      - text: Projects
+        href: index.qmd#projects
+      - text: Contact
+        href: index.qmd#contact
+    right:
+      - text: CV
+        href: cv.pdf        # keep if your PDF is at repo root
+        target: _blank
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
-    toc: true
-
-
+    smooth-scroll: true
+    toc: false

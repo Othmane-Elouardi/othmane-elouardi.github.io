@@ -1,9 +1,233 @@
 ---
 title: "Othmane Elouardi"
+page-layout: full
+format:
+  html:
+    toc: false
 ---
 
-This is a Quarto website.
+::: {#home .hero}
+**Business Analytics • Strategy • Data-Driven Decisions**
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Othmane <span class="accent">Elouardi</span>
 
-![](./images/dataimage.jpg){width="75%" fig-align="center"}
+<span id="typewriter"></span><span class="cursor">|</span>
+
+<div class="cta">
+  <a class="btn btn-primary" href="#projects">View Projects</a>
+  <a class="btn btn-outline" href="cv.pdf" download>Download CV</a>
+  <a class="btn btn-ghost" href="#contact">Contact</a>
+</div>
+
+<div class="bg-orbs"></div>
+:::
+
+::: {#about .band .band--glass}
+<div class="section">
+### About Me
+
+I’m a results-driven **Business Analyst** with graduate training in **Applied Business Analytics** and a record of improving performance through **data-driven insights** and **process optimization**.  
+I transform complex datasets into clear narratives and **decision support** that improve efficiency, reduce risk, and drive measurable impact.
+
+I combine technical proficiency in **Python**, **R**, **SQL**, **Power BI/Tableau**, and **Excel** with strong communication and leadership skills—bridging the gap between data, strategy, and execution.
+
+![](images/headshot.jpg){.headshot width=160}
+
+[LinkedIn](https://www.linkedin.com/in/eothmane/) ·
+[GitHub](https://github.com/Othmane-Elouardi) ·
+<a href="cv.pdf" download>Download CV</a>
+
+
+</div>
+:::
+
+::: {#skills .band .band--grid}
+<div class="section">
+### Core Skills (Expandable)
+
+<details open>
+  <summary><strong>Analytics & Decision Support</strong></summary>
+  <ul>
+    <li>Exploratory Analysis · KPI Design · Executive Reporting</li>
+    <li>Forecasting · Scenario Modeling (Python/R, Excel)</li>
+    <li>Data-driven recommendations for strategic planning</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Operations & Optimization</strong></summary>
+  <ul>
+    <li>Process Mapping · Bottleneck Discovery · Workflow Automation</li>
+    <li>Operational Dashboards (Power BI/Tableau)</li>
+    <li>Continuous Improvement & Lean Principles</li>
+  </ul>
+</details>
+
+<details>
+  <summary><strong>Tools & Methods</strong></summary>
+  <ul>
+    <li>Python (pandas, scikit-learn) · R · SQL · Power BI/Tableau · Excel</li>
+    <li>Segmentation · Regression · Time-Series Modeling</li>
+    <li>Git/GitHub · Quarto</li>
+  </ul>
+</details>
+</div>
+:::
+
+::: {#projects .band .band--dark}
+<div class="section">
+### Featured Projects
+
+<div class="cards">
+  <div class="card">
+    <h4>Operational Efficiency Dashboard</h4>
+    <p>Automated an executive KPI view; unified data sources and standardized metrics for consistent decision-making.</p>
+    <ul>
+      <li><em>Impact:</em> 75% reduction in manual reporting</li>
+      <li><em>Stack:</em> Power BI, SQL, Excel</li>
+    </ul>
+    <details><summary><strong>Details</strong></summary>
+      Built a governed semantic layer, drill-through dashboards, and scheduled data refresh pipelines with validation checks.
+    </details>
+  </div>
+
+  <div class="card">
+    <h4>Predictive Business Forecasting</h4>
+    <p>Developed forecasting models to anticipate volume and revenue trends for staffing and inventory planning.</p>
+    <ul>
+      <li><em>Impact:</em> +20% forecast accuracy vs. baseline</li>
+      <li><em>Stack:</em> Python (pandas, scikit-learn), SQL</li>
+    </ul>
+    <details><summary><strong>Details</strong></summary>
+      Compared ETS and tree-based models using rolling backtests and MAPE; results fed into Power BI capacity planning.
+    </details>
+  </div>
+
+  <div class="card">
+    <h4>Pricing & Market Analysis</h4>
+    <p>Performed price elasticity and segmentation analysis to identify margin opportunities and targeted offers.</p>
+    <ul>
+      <li><em>Impact:</em> Defined clear growth levers with quantified risk bands</li>
+      <li><em>Stack:</em> Python, SQL, Tableau</li>
+    </ul>
+    <details><summary><strong>Details</strong></summary>
+      Conducted K-means segmentation, estimated elasticity bands, and delivered executive dashboards with actionable insights.
+    </details>
+  </div>
+</div>
+
+<p class="muted small">Want more detail? Use the form below to contact me or download the CV above.</p>
+</div>
+:::
+
+::: {#contact .band .band--accent}
+<div class="section">
+### Contact Me
+
+Use this form to reach me — it goes directly to my inbox.
+
+<form id="contact-form" class="contact-form">
+  <div class="grid">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="_replyto" placeholder="Your email" required>
+  </div>
+  <input type="text" name="company" placeholder="Company (optional)">
+  <textarea name="message" rows="4" placeholder="Write your message..." required></textarea>
+  <input type="text" name="_gotcha" style="display:none">
+  <button type="submit" class="btn btn-primary">Send Message</button>
+  <p id="form-status" class="muted" style="margin-top:.5rem;"></p>
+</form>
+
+<!-- Wrangler / Cloudflare Worker notes:
+  wrangler.toml
+    [vars]
+    ALLOWED_ORIGIN = "https://othmane-elouardi.github.io"    # add localhost origin during dev if needed
+    FROM_EMAIL     = "website.onboarding@resend.dev"
+    TO_EMAIL       = "othmaneelouardi@gmail.com"
+  worker.js accepts JSON POST.
+-->
+</div>
+:::
+
+```{=html}
+<script>
+// ---------- Typewriter ----------
+const phrases=["Turning data into decisions","Optimizing operations with analytics","Driving measurable business impact"];
+let i=0,j=0,del=false,el=document.getElementById("typewriter");
+function tick(){const full=phrases[i]; j+=del?-1:1; el.textContent=full.slice(0,j);
+  if(!del&&j===full.length){del=true; setTimeout(tick,1100); return;}
+  if(del&&j===0){del=false; i=(i+1)%phrases.length;}
+  setTimeout(tick, del?45:70);
+}
+tick();
+
+// ---------- Reveal on scroll ----------
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('reveal')}),{threshold:.12});
+document.querySelectorAll('.section,.card').forEach(n=>io.observe(n));
+
+// ---------- Scroll spy (includes #home hero) ----------
+const sections=[...document.querySelectorAll('.band[id], .hero[id], .section[id]')];
+const navLinks=[...document.querySelectorAll('.navbar a[href*="#"], .navbar .nav-link[href*="#"]')];
+
+function setActive(id){
+  navLinks.forEach(a=>{
+    const href=a.getAttribute('href')||'';
+    a.classList.toggle('active', href.endsWith('#'+id));
+  });
+  document.querySelectorAll('.band, .section').forEach(b=>b.classList.remove('current'));
+  const active=document.getElementById(id);
+  if(active && (active.classList.contains('band')||active.classList.contains('section'))) active.classList.add('current');
+}
+
+const spy=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id=entry.target.getAttribute('id');
+      setActive(id);
+      history.replaceState(null,"",'#'+id);
+    }
+  });
+},{threshold:0.55});
+
+sections.forEach(s=>spy.observe(s));
+
+navLinks.forEach(a=>{
+  a.addEventListener('click',()=>{
+    const id=(a.getAttribute('href')||'').split('#')[1];
+    if(id) setActive(id);
+  });
+});
+
+window.addEventListener('load',()=>{
+  const id=(location.hash || '#home').slice(1);
+  setActive(id);
+});
+
+// ---------- Force download on navbar "CV" (Quarto YAML can't add attributes) ----------
+const navCv = document.querySelector('.navbar a[href$="cv.pdf"], .navbar .nav-link[href$="cv.pdf"]');
+if (navCv) { navCv.setAttribute('download',''); }
+
+// ---------- Cloudflare Worker AJAX (JSON) ----------
+const form=document.getElementById('contact-form');
+const statusEl=document.getElementById('form-status');
+// Replace with your actual Workers endpoint (or routed domain)
+const CONTACT_ENDPOINT='https://contact-endpoint.YOUR_SUBDOMAIN.workers.dev/';
+
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  statusEl.textContent='Sending...';
+  const bot=(form.querySelector('[name="_gotcha"]')||{}).value||'';
+  if(bot){ statusEl.textContent='Thanks!'; form.reset(); return; }
+
+  const data=Object.fromEntries(new FormData(form).entries());
+  try{
+    const resp=await fetch(CONTACT_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    });
+    if(resp.ok){ form.reset(); statusEl.textContent='Thanks! Your message has been sent.'; }
+    else{ statusEl.textContent='Something went wrong. Please try again.'; }
+  }catch(_){ statusEl.textContent='Network error. Please try again.'; }
+});
+</script>
